@@ -34,7 +34,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t gitactions-ecs:${{ env.BRANCH_NAME }}-${{ github.run_number }} .
-          docker tag gitactions-ecs:${{ env.BRANCH_NAME }}-${{ github.run_number }} 793229168581.dkr.ecr.us-east-1.amazonaws.com/greens:${{ env.BRANCH_NAME }}-${{ github.run_number }}
+          docker tag gitactions-ecs:${{ env.BRANCH_NAME }}-${{ github.run_number }} 793229168581.dkr.ecr.us-east-1.amazonaws.com/demo-ecr-repo:${{ env.BRANCH_NAME }}-${{ github.run_number }}
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -42,7 +42,7 @@ jobs:
 
       - name: Push Docker image to Amazon ECR
         run: |
-          docker push 793229168581.dkr.ecr.eu-west-1.amazonaws.com/greens:${{ env.BRANCH_NAME }}-${{ github.run_number }}
+          docker push 793229168581.dkr.ecr.us-east-1.amazonaws.com/demo-ecr-repo:${{ env.BRANCH_NAME }}-${{ github.run_number }}
       - name: Deploy to ECS
         run: |
              
