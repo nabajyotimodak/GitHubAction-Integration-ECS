@@ -19,23 +19,14 @@
             "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/demo-deploy",
-                    "awslogs-region": "us-east-1",
-                    "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
-            }
+            "ulimits": []
         }
     ],
     "taskRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
     "requiresCompatibilities": [
-        "EC2"
+        "FARGATE"
     ],
     "cpu": "1024",
     "memory": "3072",
