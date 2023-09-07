@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "demo-deploy",
-            "image": "793229168581.dkr.ecr.us-east-1.amazonaws.com/demo-deploy:GIT_COMMIT",
+            "image": "793229168581.dkr.ecr.us-east-1.amazonaws.com/demo-deploy",
             "cpu": 0,
             "portMappings": [
                 {
