@@ -52,7 +52,7 @@
         "EC2"
     ],
     "cpu": "1024",
-    "memory": "3072",
+    "memory": "1024",
     "registeredAt": "2023-09-07T15:53:53.743000+05:30",
     "registeredBy": "arn:aws:iam::793229168581:root"
 }

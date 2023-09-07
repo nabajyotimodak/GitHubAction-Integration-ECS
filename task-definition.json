@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:793229168581:task-definition/deploy-test:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:793229168581:task-definition/deploy-test:4",
     "containerDefinitions": [
         {
             "name": "deploy-test",
-            "image": "793229168581.dkr.ecr.us-east-1.amazonaws.com/demo-deploy",
+            "image": "793229168581.dkr.ecr.us-east-1.amazonaws.com/demo-deploy:0353f9e3ed5ffc5491ffd77388c671c612824e7c",
             "cpu": 0,
             "portMappings": [
                 {
@@ -14,16 +14,14 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
-            "volumesFrom": [],
-            "ulimits": []
+            "volumesFrom": []
         }
     ],
     "family": "deploy-test",
     "taskRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
-    "revision": 1,
+    "revision": 4,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -35,9 +33,6 @@
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
         }
     ],
     "placementConstraints": [],
@@ -52,7 +47,7 @@
         "EC2"
     ],
     "cpu": "1024",
-    "memory": "3072",
-    "registeredAt": "2023-09-07T15:53:53.743000+05:30",
+    "memory": "1024",
+    "registeredAt": "2023-09-07T16:41:15.979000+05:30",
     "registeredBy": "arn:aws:iam::793229168581:root"
 }
