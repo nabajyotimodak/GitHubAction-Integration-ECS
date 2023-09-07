@@ -1,19 +1,46 @@
 {
-	"family": "greens-td",
-	"taskRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
-	"containerDefinitions": [{
-		"name": "apachecont",
-		"image": "793229168581.dkr.ecr.eu-west-1.amazonaws.com/demo-ecr-repo:GIT_COMMIT",
-		"cpu": 400,
-		"memory": 300,
-		"memoryReservation": 200,
-		"volumesFrom": [],
-		"portMappings": [{
-			"hostPort": 0,
-			"containerPort": 80,
-			"protocol": "tcp"
-		}],
-		"essential": true,
-		"mountPoints": []
-	}]
+    "family": "demo-deploy",
+    "containerDefinitions": [
+        {
+            "name": "demo-deploy",
+            "image": "793229168581.dkr.ecr.us-east-1.amazonaws.com/demo-deploy:GIT_COMMIT",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "demo-deploy-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/demo-deploy",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            }
+        }
+    ],
+    "taskRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
 }
