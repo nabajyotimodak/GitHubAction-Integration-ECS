@@ -95,3 +95,61 @@ jobs:
              else
                   echo "Skipping deployment"
              fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    "family": "demo-deploy",
+    "containerDefinitions": [
+        {
+            "name": "demo-deploy",
+            "image": "793229168581.dkr.ecr.us-east-1.amazonaws.com/demo-deploy",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "demo-deploy-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": []
+        }
+    ],
+    "taskRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
