@@ -80,10 +80,10 @@ jobs:
 
 
              if [ "${{ github.ref }}" == "refs/heads/development" ]; then
-             SERVICE_NAME="new-svc"
+             SERVICE_NAME="demoproject"
              IMAGE_VERSION="${{ env.BRANCH_NAME }}-${{ github.run_number }}"
-             TASK_FAMILY="new-tf"
-             CLUSTER="new-cluster"
+             TASK_FAMILY="taskdifinition"
+             CLUSTER="demoproject"
              TASK_ROLE="ecsTaskExecutionRole"
              JSON_FILE=".github/workflows/task-definition"
              RUNNING_COUNT=1
@@ -91,4 +91,3 @@ jobs:
              else
                   echo "Skipping deployment"
              fi
-             
