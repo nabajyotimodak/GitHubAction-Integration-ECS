@@ -1,19 +1,37 @@
 {
-	"family": "greens-td",
-	"taskRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
-	"containerDefinitions": [{
-		"name": "apachecont",
-		"image": "793229168581.dkr.ecr.eu-west-1.amazonaws.com/demo-ecr-repo:GIT_COMMIT",
-		"cpu": 400,
-		"memory": 300,
-		"memoryReservation": 200,
-		"volumesFrom": [],
-		"portMappings": [{
-			"hostPort": 0,
-			"containerPort": 80,
-			"protocol": "tcp"
-		}],
-		"essential": true,
-		"mountPoints": []
-	}]
+    "family": "taskdifinition",
+    "containerDefinitions": [
+        {
+            "name": "demoproject",
+            "image": "793229168581.dkr.ecr.us-east-1.amazonaws.com/demoproject:GIT_COMMIT",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "demoproject-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 0,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": []
+        }
+    ],
+    "taskRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
+    "networkMode": "bridge",
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "256",
+    "memory": "300",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
 }
