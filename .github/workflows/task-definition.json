@@ -1,15 +1,15 @@
 {
-    "family": "demoproject",
+    "family": "new-tf",
     "containerDefinitions": [
         {
-            "name": "demoproject",
+            "name": "new-container",
             "image": "793229168581.dkr.ecr.us-east-1.amazonaws.com/demoproject:GIT_COMMIT",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "demoproject-80-tcp",
+                    "name": "new-container-80-tcp",
                     "containerPort": 80,
-                    "hostPort": 80,
+                    "hostPort": 0,
                     "protocol": "tcp",
                     "appProtocol": "http"
                 }
@@ -19,7 +19,17 @@
             "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": []
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/new-tf",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            }
         }
     ],
     "taskRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
@@ -28,8 +38,8 @@
     "requiresCompatibilities": [
         "EC2"
     ],
-    "cpu": "256",
-    "memory": "300",
+    "cpu": "1024",
+    "memory": "3072",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
