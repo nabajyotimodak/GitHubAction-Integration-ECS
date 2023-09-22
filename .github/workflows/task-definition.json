@@ -1,13 +1,13 @@
 {
-    "family": "demo-deploy",
+    "family": "demoproject",
     "containerDefinitions": [
         {
-            "name": "demo-deploy",
-            "image": "793229168581.dkr.ecr.us-east-1.amazonaws.com/demo-deploy:GIT_COMMIT",
+            "name": "demoproject",
+            "image": "793229168581.dkr.ecr.us-east-1.amazonaws.com/demoproject:GIT_COMMIT",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "demo-deploy-80-tcp",
+                    "name": "demoproject-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -22,6 +22,7 @@
             "ulimits": []
         }
     ],
+    "taskRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::793229168581:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
     "requiresCompatibilities": [
