@@ -80,10 +80,10 @@ jobs:
 
 
              if [ "${{ github.ref }}" == "refs/heads/development" ]; then
-             SERVICE_NAME="demoproject"
+             SERVICE_NAME="demodeploy"
              IMAGE_VERSION="${{ env.BRANCH_NAME }}-${{ github.run_number }}"
              TASK_FAMILY="taskdifinition"
-             CLUSTER="demoproject"
+             CLUSTER="demodeploy"
              TASK_ROLE="ecsTaskExecutionRole"
              JSON_FILE=".github/workflows/task-definition"
              RUNNING_COUNT=1

@@ -43,10 +43,10 @@ others keep default.
 "image": "793229168581.dkr.ecr.us-east-1.amazonaws.com/demoproject:GIT_COMMIT",
 
 ### Step-3
-Now create a Dummy Target group with out any targets, and also Create a default Application Load balancer by using this Dummy target group. After the LOad balancer gets provisioned, just save the DNS and save in a note pad.
+Now create a Dummy Target group (Instance type) with out any targets, and also Create a default Application Load balancer by using this Dummy target group. After the Load balancer gets provisioned, just save the DNS and save in a note pad.
 
 ### Step-4
-Now create an ECS cluster with EC2 based launching system, and in the autoiiscaling group create a new one
+Now create an ECS cluster with EC2 based launching system, and in the auto-scaling group create a new one
 with Amazon Linux 2 or any other, then Instance type as needed, and others as required.
 In networking select the security group which opens all the ports for not facing any error or else dafault can be kept as no host port has been given.
 
@@ -54,7 +54,7 @@ In networking select the security group which opens all the ports for not facing
 After the Cluster comes in Active state create a service inside the cluster
     Select Capacity Provider Strategy --> Use cluster default
     Select service, select task-definition family name. let the revision takes automatically.
-    Then select for replica, if it is a normal container, if you need one at each node, then go for daemon
+    Then select for replica, if it is a normal container, if you need one at each node, then go for daemon-set.
     Put the number of replica as "0". The number will be fetched from the sample.yaml file as given in the RUNNING_COUNT (there you can change as per your need)
 
     Then Go for load-balancing option and select Application Load balancer and target group that we created in the step 3.
