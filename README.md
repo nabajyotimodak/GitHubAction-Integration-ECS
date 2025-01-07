@@ -56,7 +56,6 @@ After the Cluster comes in Active state create a service inside the cluster
     Select service, select task-definition family name. let the revision takes automatically.
     Then select for replica, if it is a normal container, if you need one at each node, then go for daemon
     Put the number of replica as "0". The number will be fetched from the sample.yaml file as given in the RUNNING_COUNT (there you can change as per your need)
-
     Then Go for load-balancing option and select Application Load balancer and target group that we created in the step 3.
 
 ### Step-6
@@ -64,5 +63,4 @@ Edit the sample.yaml file with the ECR repo URI
 then Check the Region in the whole script.
 Then edit the Service name, task family name, cluster name as per the need.
 Then check the Task-definition.json file as well as we copied from the Console.
-
 Then push the change in the branch as mentioned in the sample.yml file and before that don't forget to add or check the secrets in the GitHub-Repo settings.
